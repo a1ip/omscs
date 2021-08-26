@@ -34,7 +34,7 @@ def plot_dataframe(df):
     """ Plot given dataframe"""
     #df = df / df[0]
     print(df)
-    df = df / df.iloc[0,:]
+    df = df / df.iloc[0]
     pl = df.plot(title = "Time vs Price")
     pl.set_xlabel("Time")
     pl.set_ylabel("Price")
@@ -57,7 +57,7 @@ def create_df(file):
 if __name__ == "__main__":
     # file = ["SPY", "GOOG", "IBM", "GLD"]
     file = ["SPY", "IBM"]
-    df = get_data(file, create_date_dataframe('2010/1/1', '2010/1/3'))
+    df = get_data(file, create_date_dataframe('2010/1/1', '2010/12/31'))
     #df['2010-1-1':'2010-1-31']
     plot_dataframe(df)
     #get_data_slice(df, '2010-1-1', '2010-1-31')
